@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+  --color-cream: #F5F0EB;
+  --color-cream-dark: #E8E0D8;
+  --color-brand-black: #0A0A0A;
+  --color-brand-black-light: #1A1A1A;
+  --color-brand-accent: #C8A87C;
+  --color-brand-accent-hover: #D4B98E;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --animate-marquee: marqueeScroll 30s linear infinite;
+  --animate-scroll-pulse: scrollPulse 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* ── Custom Keyframes ── */
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%      { opacity: 0.8; transform: scaleY(1.5); }
+}
+
+/* ── Base Styles ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-brand-black);
+    overflow-x: hidden;
+  }
+
+  /* Custom minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #9A9A9A;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6A6A6A;
+  }
+
+  ::selection {
+    background: var(--color-brand-accent);
+    color: var(--color-brand-black);
+  }
+}
+
+/* ── Utilities for specific features ── */
+.touch-device {
+  cursor: auto !important;
+}
+
+.no-cursor {
+  cursor: none !important;
+}
+
+/* Scroll snap scrollbars/hide scroll for smooth interaction */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
