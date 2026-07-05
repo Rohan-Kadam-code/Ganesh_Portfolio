@@ -66,13 +66,16 @@
   }
 }
 
-/* ── Utilities for specific features ── */
-.touch-device {
-  cursor: auto !important;
+/* ── Custom cursor handling ── */
+@media (pointer: fine) {
+  .no-cursor, .project-card {
+    cursor: none !important;
+  }
 }
-
-.no-cursor {
-  cursor: none !important;
+@media (pointer: coarse) {
+  .no-cursor, .project-card {
+    cursor: auto !important;
+  }
 }
 
 /* Scroll snap scrollbars/hide scroll for smooth interaction */

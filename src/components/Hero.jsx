@@ -29,10 +29,10 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center bg-cream text-brand-black pt-[72px]"
+      className="relative min-h-screen flex items-center bg-cream text-brand-black pt-[90px] pb-16 lg:py-0"
       id="hero"
     >
-      <div className="w-full max-w-[1400px] mx-auto px-[4vw] md:px-[6vw]">
+      <div className="w-full max-w-[1400px] mx-auto px-[6vw]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           
           {/* Left Text Content */}
@@ -40,7 +40,7 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 order-last lg:order-none"
           >
             <motion.p
               variants={itemVariants}
@@ -77,17 +77,17 @@ export default function Hero() {
             
             <motion.div
               variants={itemVariants}
-              className="flex gap-4 mt-4"
+              className="flex flex-col sm:flex-row gap-4 mt-2"
             >
               <a
                 href="#work"
-                className="px-8 py-3 bg-brand-black text-cream hover:bg-brand-accent hover:text-brand-black rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+                className="px-8 py-3 bg-brand-black text-cream hover:bg-brand-accent hover:text-brand-black rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 text-center shadow-sm hover:shadow-md"
               >
                 View Work
               </a>
               <a
                 href="#contact"
-                className="px-8 py-3 border border-brand-black text-brand-black hover:bg-brand-black hover:text-cream rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 transform hover:-translate-y-0.5"
+                className="px-8 py-3 border border-brand-black text-brand-black hover:bg-brand-black hover:text-cream rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 text-center"
               >
                 Get in Touch
               </a>
@@ -95,7 +95,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Parallax Media */}
-          <div className="relative w-full h-[60vh] lg:h-[80vh] overflow-hidden rounded-lg shadow-lg order-first lg:order-none">
+          <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[80vh] overflow-hidden rounded-lg shadow-lg">
             <motion.img
               src={heroImg}
               alt="Ganesh Korde portrait"
@@ -110,7 +110,7 @@ export default function Hero() {
       </div>
 
       {/* Down indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none hidden lg:flex">
         <span className="text-[10px] font-semibold uppercase tracking-widest text-gray-400">Scroll</span>
         <div className="w-[1px] h-10 bg-brand-black/20 overflow-hidden">
           <div className="w-full h-full bg-brand-black origin-top animate-scroll-pulse" />

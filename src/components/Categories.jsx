@@ -25,9 +25,8 @@ export default function Categories() {
   });
 
   // Map scroll progress to horizontal translateX.
-  // 4 cards × ~70vw each. We need to move the track left by
-  // (trackWidth - viewportWidth). Using percentage of track is safe cross-device.
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  // Translating from 0% to -65% covers the scrollable width perfectly without trailing gaps.
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
 
   return (
     <section className="bg-brand-black text-cream" id="categories">
